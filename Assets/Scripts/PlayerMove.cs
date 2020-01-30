@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using QFramework;
 
 public class PlayerMove : MonoBehaviour
 {
     public float Step = 0.5f;
     public float RotateSpeed = 10f;
-    public JoyStick JoyStick;
+    [Inject]
+    public JoyStick mJoyStick { get; set; }
     public Animator Animator;
 
     private new Rigidbody rigidbody;
@@ -16,9 +18,14 @@ public class PlayerMove : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void Start()
+    {
+        App.Container.Inject(this);
+    }
+
     void FixedUpdate() {
-        float h = JoyStick.Horizontal();
-        float v = JoyStick.Vertical();
+        float h = mJoyStick.Horizontal();
+        float v = mJoyStick.Vertical();
         float speed = Mathf.Max(Mathf.Abs(h), Mathf.Abs(v));
 
         if (speed > 0.01) {

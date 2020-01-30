@@ -10,6 +10,10 @@ public class JoyStick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
     private Image fgImg;
     private Vector3 inputPoint;
 
+    private void Awake()
+    {
+        App.Container.RegisterInstance(this);
+    }
 
     void Start() {
         bgImg = this.GetComponent<Image>();
