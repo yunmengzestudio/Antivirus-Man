@@ -15,11 +15,13 @@ public class HumanFactory : MonoBehaviour
 
     private ResLoader resLoader;
     private float timer;
+    private Transform humenRoot;
 
 
     private void Awake() {
         resLoader = ResLoader.Allocate();
         timer = Interval;
+        InitHumenRoot();
     }
 
     private void Update() {
@@ -42,7 +44,7 @@ public class HumanFactory : MonoBehaviour
 
         // 实例化
         GameObject go = resLoader.LoadSync<GameObject>(HumanPrefab).Instantiate();
-        go.transform.parent = transform;
+        go.transform.parent = humenRoot;
         go.transform.position = bornPos;
         // 人物模型加载
         GameObject model = resLoader.LoadSync<GameObject>(prefab).Instantiate();
@@ -52,5 +54,11 @@ public class HumanFactory : MonoBehaviour
         // 初始化 Human
         Human human = go.GetComponent<Human>();
         human.Init(humanEvent);
+    }
+
+    private void InitHumenRoot() {
+        humenRoot = new GameObject("HumenRoot").transform;
+        humenRoot.parent = transform;
+        humenRoot.localPosition = Vector3.zero;
     }
 }

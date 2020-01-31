@@ -16,17 +16,26 @@ public class Human : MonoBehaviour
 
     private Vector3 BornPos;
     private Coroutine mission;
+    private Vector3 missionPos;
 
 
     private void Update() {
         animator.SetFloat("Speed", Agent.velocity.magnitude / SpeedRatio);
     }
 
+    private void OnTriggerStay(Collider other) {
+        OnTriggerEnter(other);
+    }
+
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player") {
+        if (other.tag == "Damage") {
             StopCoroutine(mission);
             StartCoroutine(GOHome());
+
             ReportMission(done: false);// 告诉 Manager 该项活动被阻止，进行记录
+            if (humanEvent.EventType == HumanEventType.Party) {
+                TypeEventSystem.Send(new PartyNotification(missionPos, transform, true));
+            }
         }
     }
 
@@ -49,8 +58,8 @@ public class Human : MonoBehaviour
         FluentText.ShowPanel();
 
         // Get target position and Move to target pos
-        Vector3 pos = App.Container.Resolve<LevelManager>().GetTargetPos(humanEvent.EventType);
-        Agent.SetDestination(pos);
+        missionPos = App.Container.Resolve<LevelManager>().GetTargetPos(humanEvent.EventType);
+        Agent.SetDestination(missionPos);
 
         while (!ArriveTarget()) {
             yield return null;  // 等待到下一帧
@@ -58,8 +67,10 @@ public class Human : MonoBehaviour
         
         // 到达指定地点后进行结算
         if (humanEvent.EventType == HumanEventType.Party) {
+            Debug.Log("到咯!");
+            FluentText.ChangeWord("到咯！");
             // 告诉 Manager 自己到达某处聚集点
-
+            TypeEventSystem.Send(new PartyNotification(missionPos, transform));
         }
         else {
             ReportMission(done: true);
@@ -69,11 +80,13 @@ public class Human : MonoBehaviour
     
 
     private IEnumerator GOHome() {
+        FluentText.ChangeWord("怕了怕了！我回家了！");
         Agent.SetDestination(BornPos);
         while (!ArriveTarget()) {
             yield return null;
         }
         // Do something ...
+        Destroy(gameObject, 1f);
     }
 
     // 告诉 Manager 该项活动是否被阻止，进行记录
@@ -83,8 +96,7 @@ public class Human : MonoBehaviour
 
     // Agent 是否到达当前目的地
     private bool ArriveTarget() {
-        return (Agent.destination.x - Agent.nextPosition.x <= 0.05f)
-                && (Agent.destination.y - Agent.nextPosition.y <= 0.05f)
-                && (Agent.destination.z - Agent.nextPosition.z <= 0.05f);
+        return (Agent.destination - Agent.nextPosition).magnitude
+            <= Agent.stoppingDistance + 0.05f;
     }
 }
