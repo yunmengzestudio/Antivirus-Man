@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using QFramework;
+
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public TouchButton AttackBtn;
     public Animator Animator;
     public GameObject DamageCollider;
+    public FluentTextController FluentText;
 
     private float attackDuration;
     private float timer = 0f;
@@ -17,6 +20,14 @@ public class PlayerAttack : MonoBehaviour
         if (AttackBtn) {
             AttackBtn.PointerDownEvent += (s, e) => Attack();
         }
+
+        // FluentText 初始化
+        FluentText.InitPanel(transform, FluentText.transform.position - transform.position);
+        FluentText.ShowPanel();
+
+        // 注册驱逐通知
+        TypeEventSystem.Register<MissionExpelledNotification>(OnExpelOne);
+
         // 获取攻击动画时长
         if (Animator) {
             AnimationClip[] clips = Animator.runtimeAnimatorController.animationClips;
@@ -27,6 +38,10 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnDestroy() {
+        TypeEventSystem.UnRegister<MissionExpelledNotification>(OnExpelOne);
     }
 
     private void Update() {
@@ -51,4 +66,12 @@ public class PlayerAttack : MonoBehaviour
         // 开启碰撞器
         DamageCollider.tag = "Damage";
     }
+
+    // 成功驱逐村民的处理
+    private void OnExpelOne(MissionExpelledNotification humanEvent) {
+        int i = Random.Range(0, humanEvent.PoliceWarningTexts.Length);
+        FluentText.ChangeWord(humanEvent.PoliceWarningTexts[i]);
+        // Audio
+    }
+
 }

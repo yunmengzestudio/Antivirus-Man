@@ -17,6 +17,7 @@ public class Human : MonoBehaviour
     private Vector3 BornPos;
     private Coroutine mission;
     private Vector3 missionPos;
+    private bool dead = false;
 
 
     private void Update() {
@@ -28,14 +29,13 @@ public class Human : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Damage") {
+        if (!dead && other.tag == "Damage") {
+            dead = true;
             StopCoroutine(mission);
             StartCoroutine(GOHome());
-
-            ReportMission(done: false);// 告诉 Manager 该项活动被阻止，进行记录
-            if (humanEvent.EventType == HumanEventType.Party) {
-                TypeEventSystem.Send(new PartyNotification(missionPos, transform, true));
-            }
+            
+            // 告诉 Manager 该项活动被阻止，进行记录
+            ReportMission(done: false);
         }
     }
 
@@ -67,8 +67,6 @@ public class Human : MonoBehaviour
         
         // 到达指定地点后进行结算
         if (humanEvent.EventType == HumanEventType.Party) {
-            Debug.Log("到咯!");
-            FluentText.ChangeWord("到咯！");
             // 告诉 Manager 自己到达某处聚集点
             TypeEventSystem.Send(new PartyNotification(missionPos, transform));
         }
@@ -91,6 +89,18 @@ public class Human : MonoBehaviour
 
     // 告诉 Manager 该项活动是否被阻止，进行记录
     private void ReportMission(bool done) {
+        // 活动被阻止
+        if (!done) {
+            if (humanEvent.EventType == HumanEventType.Party) {
+                TypeEventSystem.Send(new PartyNotification(missionPos, transform, true));
+            }
+            TypeEventSystem.Send(new MissionExpelledNotification(humanEvent));
+        }
+        // 活动成功完成
+        else {
+            TypeEventSystem.Send(new MissionCompletedNotification(humanEvent));
+        }
+
         Debug.Log("Mission: " + humanEvent.EventType.ToString() + (done ? "完成" : "被阻止"));
     }
 

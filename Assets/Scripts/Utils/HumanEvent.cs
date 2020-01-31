@@ -20,4 +20,24 @@ public class HumanEvent
     public string[] TipTexts;               // 出门后头顶的提示文字
     public string[] PoliceWarningTexts;     // 被大爷抓了之后说的文字
     public AudioClip[] PoliceWarningAudios; // 被大爷抓了之后说的话
+
+    public HumanEvent() { }
+
+    public HumanEvent(HumanEvent other) {
+        EventType = other.EventType;
+        Prefabs = other.Prefabs;
+        TipTexts = other.TipTexts;
+        PoliceWarningTexts = other.PoliceWarningTexts;
+        PoliceWarningAudios = other.PoliceWarningAudios;
+    }
+}
+
+public class MissionExpelledNotification : HumanEvent
+{
+    public MissionExpelledNotification(HumanEvent e) : base(e) { }
+}
+
+public class MissionCompletedNotification : HumanEvent
+{
+    public MissionCompletedNotification(HumanEvent e) : base(e) { }
 }

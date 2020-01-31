@@ -8,18 +8,25 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     public EventPositions[] Positions;
+    public Text MissionConditionText;
 
     private ResLoader resLoader;
     private Dictionary<HumanEventType, EventPositions> Event2Pos;
     private Dictionary<Vector3, List<Transform>> PartyPos2Human;
     private List<FluentTextController> partyTipTexts;
 
+    private List<int> missionExpelledRecord;      // 被驱逐的事件记录
+    private List<int> missionCompletedRecord;     // 事件完成的记录
+
 
     private void Awake() {
         // 注册 IOC
         App.Container.RegisterInstance<LevelManager>(this);
         // 注册聚会通知的提醒
-        TypeEventSystem.Register<PartyNotification>(OnPartyNotify);  
+        TypeEventSystem.Register<PartyNotification>(OnPartyNotify);
+        // 注册活动成功/失败的通知提醒
+        TypeEventSystem.Register<MissionCompletedNotification>(OnMissionCompleteNotify);
+        TypeEventSystem.Register<MissionExpelledNotification>(OnMissionExpelledNotify);
 
         ResMgr.Init();
         resLoader = ResLoader.Allocate();
@@ -27,15 +34,23 @@ public class LevelManager : MonoBehaviour
         InitEvent2Pos();
         InitPartyPos2Human();
         InitPartyTipTexts();
+        InitRecordList();
     }
 
     private void OnDestroy() {
         TypeEventSystem.UnRegister<PartyNotification>(OnPartyNotify);
+        TypeEventSystem.UnRegister<MissionCompletedNotification>(OnMissionCompleteNotify);
+        TypeEventSystem.UnRegister<MissionExpelledNotification>(OnMissionExpelledNotify);
     }
 
     private void FixedUpdate() {
-        if (partyTipTexts.Count > 0)
+        if (partyTipTexts.Count > 0) {
             CheckParty();
+        }
+
+        if (MissionConditionText) {
+            RefreshMissionConditionText();
+        }
     }
 
 
@@ -52,6 +67,34 @@ public class LevelManager : MonoBehaviour
         else
             return Vector3.zero;
     }
+
+
+    #region 活动完成/失败的消息处理
+
+    private void OnMissionCompleteNotify(MissionCompletedNotification notif) {
+        ++missionCompletedRecord[(int)notif.EventType];
+    }
+
+    private void OnMissionExpelledNotify(MissionExpelledNotification notif) {
+        ++missionExpelledRecord[(int)notif.EventType];
+    }
+
+    private void RefreshMissionConditionText() {
+        string[] labels = System.Enum.GetNames(typeof(HumanEventType));
+
+        string s = "[已完成事件]\n";
+        for(int i = 0; i < labels.Length; i++) {
+            s = s + labels[i] + ":" + missionCompletedRecord[i] + "\n";
+        }
+        s = s + "[已阻止事件]\n";
+        for (int i = 0; i < labels.Length; i++) {
+            string label = ((HumanEventType)i).ToString();
+            s = s + labels[i] + ":" + missionExpelledRecord[i] + "\n";
+        }
+        MissionConditionText.text = s;
+    }
+
+    #endregion
 
 
     #region 聚集点管理 Party
@@ -142,6 +185,17 @@ public class LevelManager : MonoBehaviour
             fluentText.ShowPanel();
             fluentText.transform.localPosition = new Vector3(pos.x, 5, pos.z);
             partyTipTexts.Add(fluentText);
+        }
+    }
+
+    // 构造记录列表
+    private void InitRecordList() {
+        int len = System.Enum.GetNames(typeof(HumanEventType)).Length;
+        missionExpelledRecord = new List<int>(len);
+        missionCompletedRecord = new List<int>(len);
+        for (int i = 0; i < len; i++) {
+            missionExpelledRecord.Add(0);
+            missionCompletedRecord.Add(0);
         }
     }
 
