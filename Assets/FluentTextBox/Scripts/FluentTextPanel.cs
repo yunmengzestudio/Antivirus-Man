@@ -9,6 +9,8 @@ public class FluentTextPanel : MonoBehaviour
 {
     //更改的字体目标
     public Text TargetText;
+    public string CurrentText { get { return HiddenText.text; } }
+
     //隐藏的text组件，只用于确定panel需要变换的大小，后期改为自动生成
     private Text HiddenText;
 

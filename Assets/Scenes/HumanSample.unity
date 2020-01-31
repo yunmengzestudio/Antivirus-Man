@@ -547,97 +547,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1340814849
-GameObject:
+--- !u!1001 &2529980429248773632
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1340814852}
-  - component: {fileID: 1340814851}
-  - component: {fileID: 1340814850}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1340814850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340814849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2bc147e28d287409d459c8e4d139d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Interval: 6
-  AccelerateRatio: 0.05
-  MinInterval: 1
-  HumanPrefab: Human
-  BornPositions:
-  - {x: 0, y: 0, z: 0}
-  HumanEvents:
-  - EventType: 0
-    Prefabs:
-    - SimpleCitizens_Biker_Black
-    - SimpleCitizens_Biker_Brown
-    TipTexts:
-    - "\u559D\u9152\u53BB\u4E86\uFF01"
-    - Drink!
-    PoliceWarningTexts:
-    - "\u8FD8\u6562\u559D\u9152\uFF01"
-    - How Dare Drink!
-    PoliceWarningAudios: []
-  - EventType: 4
-    Prefabs:
-    - SimpleCitizens_Biker_Black
-    - SimpleCitizens_Biker_Brown
-    TipTexts:
-    - "\u770B\u70ED\u95F9\u53BB\u4E86\uFF01"
-    - Party!
-    PoliceWarningTexts:
-    - "\u8FD8\u6562\u805A\u5806\uFF01"
-    - How Dare Party!
-    PoliceWarningAudios: []
---- !u!114 &1340814851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340814849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f936ad706b73284aba590de7a325aac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Positions:
-  - HumanEventType: 0
-    Positions:
-    - {x: 8, y: 4, z: 8}
-    - {x: 8, y: 1, z: 8}
-  - HumanEventType: 4
-    Positions:
-    - {x: -8, y: 4, z: 8}
-    - {x: -8, y: 1, z: 8}
---- !u!4 &1340814852
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340814849}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2529980428240750593, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750596, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc7f38c711cab8545b21806ec1b26559, type: 3}

@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class FluentTextController : MonoBehaviour
 {
     public FluentTextPanel TargetPanel;
-
+    public Text Text;
+    public string CurrentText { get { return TargetPanel.CurrentText; } }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Text = TargetPanel.TargetText;
     }
 
     // Update is called once per frame

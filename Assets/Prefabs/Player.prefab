@@ -171,6 +171,7 @@ MonoBehaviour:
   AttackKeyCode: 106
   AttackBtn: {fileID: 0}
   Animator: {fileID: 3419035053824072917}
+  DamageCollider: {fileID: 3419035053816786797}
 --- !u!1001 &3419035053816687029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -556,6 +557,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b1a84f81b31c3042b57801d8778499f, type: 3}
+--- !u!1 &3419035053816786797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100056, guid: 8b1a84f81b31c3042b57801d8778499f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3419035053816687029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3419035053816820493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400056, guid: 8b1a84f81b31c3042b57801d8778499f,
