@@ -67,6 +67,11 @@ public class Human : MonoBehaviour
         
         // 到达指定地点后进行结算
         if (humanEvent.EventType == HumanEventType.Party) {
+            // 播放动画
+            string anim = humanEvent.PartyAnimations[
+                Random.Range(0, humanEvent.PartyAnimations.Length)];
+            animator.Play(anim);
+
             // 告诉 Manager 自己到达某处聚集点
             TypeEventSystem.Send(new PartyNotification(missionPos, transform));
         }

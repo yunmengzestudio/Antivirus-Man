@@ -18,6 +18,8 @@ public class HumanEvent
     public HumanEventType EventType;
     public string[] Prefabs;                // 人物 Prefabs
     public string[] TipTexts;               // 出门后头顶的提示文字
+    public string[] PartyAnimations;        // 到达聚堆点后播放的动画
+
     public string[] PoliceWarningTexts;     // 被大爷抓了之后说的文字
     public AudioClip[] PoliceWarningAudios; // 被大爷抓了之后说的话
 
