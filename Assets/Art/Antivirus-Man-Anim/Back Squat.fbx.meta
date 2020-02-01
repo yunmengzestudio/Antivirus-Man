@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: adeb34f7e8e11d746b4f4771efde6d03
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Base_mesh
+    100004: Biker_mesh
+    100006: Body_jnt
+    100008: Cap_mesh
+    100010: Cheerleader_mesh
+    100012: Clown_mesh
+    100014: Emo_mesh
+    100016: Foot_Left_jnt
+    100018: Foot_Right_jnt
+    100020: Footballer_mesh
+    100022: Grandma_mesh
+    100024: Hair_mesh
+    100026: Hand_Left_jnt
+    100028: Hand_Right_jnt
+    100030: Hat_jnt
+    100032: Head_jnt
+    100034: Hippie_mesh
+    100036: Hips_jnt
+    100038: LowerArm_Left_jnt
+    100040: LowerArm_Right_jnt
+    100042: LowerLeg_Left_jnt
+    100044: LowerLeg_Right_jnt
+    100046: Luchador_mesh
+    100048: Mountie_mesh
+    100050: Root_jnt
+    100052: Runner_mesh
+    100054: ShopKeeper_mesh
+    100056: Spine_jnt
+    100058: Tourist_mesh
+    100060: UpperArm_Left_jnt
+    100062: UpperArm_Right_jnt
+    100064: UpperLeg_Left_jnt
+    100066: UpperLeg_Right_jnt
+    400000: //RootNode
+    400002: Base_mesh
+    400004: Biker_mesh
+    400006: Body_jnt
+    400008: Cap_mesh
+    400010: Cheerleader_mesh
+    400012: Clown_mesh
+    400014: Emo_mesh
+    400016: Foot_Left_jnt
+    400018: Foot_Right_jnt
+    400020: Footballer_mesh
+    400022: Grandma_mesh
+    400024: Hair_mesh
+    400026: Hand_Left_jnt
+    400028: Hand_Right_jnt
+    400030: Hat_jnt
+    400032: Head_jnt
+    400034: Hippie_mesh
+    400036: Hips_jnt
+    400038: LowerArm_Left_jnt
+    400040: LowerArm_Right_jnt
+    400042: LowerLeg_Left_jnt
+    400044: LowerLeg_Right_jnt
+    400046: Luchador_mesh
+    400048: Mountie_mesh
+    400050: Root_jnt
+    400052: Runner_mesh
+    400054: ShopKeeper_mesh
+    400056: Spine_jnt
+    400058: Tourist_mesh
+    400060: UpperArm_Left_jnt
+    400062: UpperArm_Right_jnt
+    400064: UpperLeg_Left_jnt
+    400066: UpperLeg_Right_jnt
+    2100000: Material
+    2100002: War
+    4300000: Base_mesh
+    4300002: Hair_mesh
+    4300004: Tourist_mesh
+    4300006: Footballer_mesh
+    4300008: Clown_mesh
+    4300010: Hippie_mesh
+    4300012: Grandma_mesh
+    4300014: ShopKeeper_mesh
+    4300016: Mountie_mesh
+    4300018: Luchador_mesh
+    4300020: Biker_mesh
+    4300022: Emo_mesh
+    4300024: Cheerleader_mesh
+    4300026: Cap_mesh
+    4300028: Runner_mesh
+    7400000: Take 001
+    7400002: mixamo.com
+    9500000: //RootNode
+    13700000: Base_mesh
+    13700002: Biker_mesh
+    13700004: Cap_mesh
+    13700006: Cheerleader_mesh
+    13700008: Clown_mesh
+    13700010: Emo_mesh
+    13700012: Footballer_mesh
+    13700014: Grandma_mesh
+    13700016: Hair_mesh
+    13700018: Hippie_mesh
+    13700020: Luchador_mesh
+    13700022: Mountie_mesh
+    13700024: Runner_mesh
+    13700026: ShopKeeper_mesh
+    13700028: Tourist_mesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
