@@ -755,6 +755,16 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 3419035053772029743, guid: ebd64093278839241a89079f4177735e,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3419035053772029743, guid: ebd64093278839241a89079f4177735e,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: Infinity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebd64093278839241a89079f4177735e, type: 3}
 --- !u!1 &242835573 stripped
@@ -835,6 +845,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 58.995003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178531945, guid: 864f8ae4f1d548c4fa4aeb1d6c9db6d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178531945, guid: 864f8ae4f1d548c4fa4aeb1d6c9db6d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 864f8ae4f1d548c4fa4aeb1d6c9db6d7, type: 3}
@@ -1068,6 +1086,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a6e61107bb1bd243b156dea1d99439e, type: 3}
+--- !u!1 &916204300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916204301}
+  m_Layer: 0
+  m_Name: BoomPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &916204301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916204300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 4.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 242835577}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955495072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,12 +1267,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086069315}
   m_CullTransparentMesh: 0
---- !u!4 &1178531945 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1178531945, guid: 864f8ae4f1d548c4fa4aeb1d6c9db6d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 488405283}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1269070438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,4 +1548,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7081c9d50eeb4458f83eaa2bbfa794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoomPoint: {fileID: 1178531945}
+  BoomPoint: {fileID: 916204301}
