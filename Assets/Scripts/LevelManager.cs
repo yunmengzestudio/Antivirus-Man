@@ -116,14 +116,17 @@ public class LevelManager : MonoBehaviour
 
     // 聚集情况检查，并给予提示
     private void CheckParty() {
-        if (!Event2Pos.ContainsKey(HumanEventType.Party)) {
-            return;
-        }
-        Vector3[] pos = Event2Pos[HumanEventType.Party].Positions.ToArray();
-        for (int i = 0; i < pos.Length; i++) {
-            List<Transform> humen = PartyPos2Human[pos[i]];
-            if (partyTipTexts[i].CurrentText != humen.Count.ToString())
-                partyTipTexts[i].ChangeWord(humen.Count.ToString());
+        int index = 0;
+        foreach (EventPositions positions in Positions) {
+            if (!positions.IsParty)
+                continue;
+
+            foreach (Vector3 pos in positions.Positions) {
+                List<Transform> humen = PartyPos2Human[pos];
+                if (partyTipTexts[index].CurrentText != humen.Count.ToString())
+                    partyTipTexts[index].ChangeWord(humen.Count.ToString());
+                index++;
+            }
         }
     }
 
@@ -144,8 +147,9 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
-        // 构造字典 Event2Pos
-        private void InitEvent2Pos() {
+    
+    // 构造字典 Event2Pos
+    private void InitEvent2Pos() {
         Event2Pos?.Clear();
         Event2Pos = new Dictionary<HumanEventType, EventPositions>();
 
@@ -163,13 +167,13 @@ public class LevelManager : MonoBehaviour
     private void InitPartyPos2Human() {
         PartyPos2Human?.Clear();
         PartyPos2Human = new Dictionary<Vector3, List<Transform>>();
-
-        if (!Event2Pos.ContainsKey(HumanEventType.Party))
-            return;
-
-        EventPositions positions = Event2Pos[HumanEventType.Party];
-        foreach (Vector3 pos in positions.Positions) {
-            PartyPos2Human.Add(pos, new List<Transform>());
+        
+        foreach (EventPositions positions in Positions) {
+            if (!positions.IsParty)
+                continue;
+            foreach (Vector3 pos in positions.Positions) {
+                PartyPos2Human.Add(pos, new List<Transform>());
+            }
         }
     }
 
@@ -178,26 +182,29 @@ public class LevelManager : MonoBehaviour
         partyTipTexts?.Clear();
         partyTipTexts = new List<FluentTextController>();
 
-        if (!Event2Pos.ContainsKey(HumanEventType.Party))
-            return;
-
         GameObject empty = new GameObject("PartyTexts");
         empty.transform.parent = transform;
         empty.transform.localPosition = Vector3.zero;
 
-        foreach (Vector3 pos in Event2Pos[HumanEventType.Party].Positions) {
-            GameObject go = resLoader.LoadSync<GameObject>("FluentTextCanvas").Instantiate();
-            go.transform.parent = empty.transform;
-            go.GetComponentsInChildren<Text>().ForEach(Text => {
-                Text.fontSize = 120;
-                Text.color = Color.red;
-            });
+        foreach (EventPositions positions in Positions) {
+            if (!positions.IsParty)
+                continue;
 
-            FluentTextController fluentText = go.GetComponent<FluentTextController>();
-            fluentText.InitPanel(empty.transform, Vector3.zero);
-            fluentText.ShowPanel();
-            fluentText.transform.localPosition = new Vector3(pos.x, 5, pos.z);
-            partyTipTexts.Add(fluentText);
+            foreach (Vector3 pos in positions.Positions) {
+                GameObject go = resLoader.LoadSync<GameObject>("FluentTextCanvas").Instantiate();
+                go.transform.parent = empty.transform;
+                go.GetComponentsInChildren<Text>().ForEach(Text => {
+                    Text.fontSize = 120;
+                    Text.color = Color.red;
+                });
+
+                FluentTextController fluentText = go.GetComponent<FluentTextController>();
+                fluentText.InitPanel(empty.transform, Vector3.zero);
+                fluentText.ChangeWord("0");
+                fluentText.ShowPanel();
+                fluentText.transform.localPosition = new Vector3(pos.x, 5, pos.z);
+                partyTipTexts.Add(fluentText);
+            }
         }
     }
 

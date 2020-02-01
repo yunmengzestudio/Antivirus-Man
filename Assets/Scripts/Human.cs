@@ -66,7 +66,7 @@ public class Human : MonoBehaviour
         }
         
         // 到达指定地点后进行结算
-        if (humanEvent.EventType == HumanEventType.Party) {
+        if (humanEvent.IsParty) {
             // 播放动画
             string anim = humanEvent.PartyAnimations[
                 Random.Range(0, humanEvent.PartyAnimations.Length)];
@@ -83,7 +83,10 @@ public class Human : MonoBehaviour
     
 
     private IEnumerator GOHome() {
-        FluentText.ChangeWord("怕了怕了！我回家了！");
+        // 被抓之后说的话
+        string words = humanEvent.WordsAfterCaught[Random.Range(0, humanEvent.WordsAfterCaught.Length)];
+        FluentText.ChangeWord(words);
+
         Agent.SetDestination(BornPos);
         while (!ArriveTarget()) {
             yield return null;
@@ -96,7 +99,7 @@ public class Human : MonoBehaviour
     private void ReportMission(bool done) {
         // 活动被阻止
         if (!done) {
-            if (humanEvent.EventType == HumanEventType.Party) {
+            if (humanEvent.IsParty) {
                 TypeEventSystem.Send(new PartyNotification(missionPos, transform, true));
             }
             TypeEventSystem.Send(new MissionExpelledNotification(humanEvent));

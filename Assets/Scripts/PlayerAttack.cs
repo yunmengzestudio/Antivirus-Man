@@ -11,9 +11,11 @@ public class PlayerAttack : MonoBehaviour
     public Animator Animator;
     public GameObject DamageCollider;
     public FluentTextController FluentText;
+    public AudioSource Audio;
 
     private float attackDuration;
     private float timer = 0f;
+    private ResLoader resLoader;
 
 
     private void Start() {
@@ -27,6 +29,9 @@ public class PlayerAttack : MonoBehaviour
 
         // 注册驱逐通知
         TypeEventSystem.Register<MissionExpelledNotification>(OnExpelOne);
+
+        // ResLoader Allocate
+        resLoader = ResLoader.Allocate();
 
         // 获取攻击动画时长
         if (Animator) {
@@ -69,9 +74,14 @@ public class PlayerAttack : MonoBehaviour
 
     // 成功驱逐村民的处理
     private void OnExpelOne(MissionExpelledNotification humanEvent) {
+        // Text
         int i = Random.Range(0, humanEvent.PoliceWarningTexts.Length);
         FluentText.ChangeWord(humanEvent.PoliceWarningTexts[i]);
+        
         // Audio
+        int index = Random.Range(0, humanEvent.PoliceWarningAudios.Length);
+        Audio.clip = resLoader.LoadSync<AudioClip>(humanEvent.PoliceWarningAudios[index]);
+        Audio.Play();
     }
 
 }
