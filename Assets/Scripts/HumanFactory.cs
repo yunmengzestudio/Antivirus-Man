@@ -10,7 +10,7 @@ public class HumanFactory : MonoBehaviour
     public float MinInterval = 1f;
 
     public string HumanPrefab = "Human";
-    public Vector3[] BornPositions;
+    public Transform[] BornPositions;
     public HumanEvent[] HumanEvents;
 
     private ResLoader resLoader;
@@ -38,7 +38,7 @@ public class HumanFactory : MonoBehaviour
 
     private void GenerateOne() {
         // 随机生成初始坐标、模型
-        Vector3 bornPos = BornPositions[Random.Range(0, BornPositions.Length)];
+        Vector3 bornPos = BornPositions[Random.Range(0, BornPositions.Length)].position;
         HumanEvent humanEvent = HumanEvents[Random.Range(0, HumanEvents.Length)];
         string prefab = humanEvent.Prefabs[Random.Range(0, humanEvent.Prefabs.Length)];
 

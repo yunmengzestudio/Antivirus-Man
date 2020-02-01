@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
         ResMgr.Init();
         resLoader = ResLoader.Allocate();
 
+        InitTargetPositions();
         InitEvent2Pos();
         InitPartyPos2Human();
         InitPartyTipTexts();
@@ -62,8 +63,8 @@ public class LevelManager : MonoBehaviour
             return Vector3.zero;
 
         EventPositions eventPositions = Event2Pos[type];
-        if (eventPositions.Positions.Length > 0)
-            return eventPositions.Positions[Random.Range(0, eventPositions.Positions.Length)];
+        if (eventPositions.Positions.Count > 0)
+            return eventPositions.Positions[Random.Range(0, eventPositions.Positions.Count)];
         else
             return Vector3.zero;
     }
@@ -118,7 +119,7 @@ public class LevelManager : MonoBehaviour
         if (!Event2Pos.ContainsKey(HumanEventType.Party)) {
             return;
         }
-        Vector3[] pos = Event2Pos[HumanEventType.Party].Positions;
+        Vector3[] pos = Event2Pos[HumanEventType.Party].Positions.ToArray();
         for (int i = 0; i < pos.Length; i++) {
             List<Transform> humen = PartyPos2Human[pos[i]];
             if (partyTipTexts[i].CurrentText != humen.Count.ToString())
@@ -131,8 +132,20 @@ public class LevelManager : MonoBehaviour
 
     #region 初始化
 
-    // 构造字典 Event2Pos
-    private void InitEvent2Pos() {
+
+    public void InitTargetPositions()
+    {
+        for(int i=0;i<Positions.Length;i++)
+        {
+            Positions[i].Positions = new List<Vector3>();
+            foreach(var point in Positions[i].TargetTransforms)
+            {
+                Positions[i].Positions.Add(point.position);
+            }
+        }
+    }
+        // 构造字典 Event2Pos
+        private void InitEvent2Pos() {
         Event2Pos?.Clear();
         Event2Pos = new Dictionary<HumanEventType, EventPositions>();
 

@@ -7,5 +7,6 @@ using UnityEngine;
 public struct EventPositions
 {
     public HumanEventType HumanEventType;
-    public Vector3[] Positions;
+    public List<Vector3> Positions;
+    public Transform[] TargetTransforms;
 }

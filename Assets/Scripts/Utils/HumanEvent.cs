@@ -6,10 +6,16 @@ using UnityEngine;
 public enum HumanEventType
 {
     Drinking,       // 去喝酒
+    Gambling,
     KTV,            // 去KTV
     Shopping,       // 去逛街
     InternetBar,    // 去网吧
-    Party           // 聚集
+    Party,           // 聚集
+    SimpleDance,
+    ComplexDance,
+    WatchPumpkin,
+    Exercise
+
 }
 
 [System.Serializable]
