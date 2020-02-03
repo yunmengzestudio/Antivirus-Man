@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7409712649772031486}
   - component: {fileID: 2660937059871652948}
   - component: {fileID: 3018517492404406752}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2121957975746969052}
   - component: {fileID: 7271405863338948817}
   - component: {fileID: 3018517492502452483}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: FluentTextPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 8310787942583647577}
   - component: {fileID: 3018517492838470656}
   - component: {fileID: 3018517492838470659}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: FluentTextCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetPanel: {fileID: 2121957975746969052}
+  Text: {fileID: 0}
 --- !u!114 &8310787942583647577
 MonoBehaviour:
   m_ObjectHideFlags: 0

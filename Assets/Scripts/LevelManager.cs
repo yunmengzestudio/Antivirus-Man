@@ -44,6 +44,22 @@ public class LevelManager : MonoBehaviour
         TypeEventSystem.UnRegister<MissionExpelledNotification>(OnMissionExpelledNotify);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GetComponent<HumanFactory>().enabled = true;
+            GetComponent<AudioSource>().clip = resLoader.LoadSync<AudioClip>("guangbo");
+            GetComponent<AudioSource>().Play();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            GetComponent<HumanFactory>().enabled = true;
+            GetComponent<AudioSource>().clip = resLoader.LoadSync<AudioClip>("rap");
+            GetComponent<AudioSource>().Play();
+        }
+    }
+
     private void FixedUpdate() {
         if (partyTipTexts.Count > 0) {
             CheckParty();
@@ -192,7 +208,7 @@ public class LevelManager : MonoBehaviour
 
             foreach (Vector3 pos in positions.Positions) {
                 GameObject go = resLoader.LoadSync<GameObject>("FluentTextCanvas").Instantiate();
-                go.transform.parent = empty.transform;
+                go.transform.SetParent(empty.transform);
                 go.GetComponentsInChildren<Text>().ForEach(Text => {
                     Text.fontSize = 120;
                     Text.color = Color.red;
@@ -201,7 +217,7 @@ public class LevelManager : MonoBehaviour
                 FluentTextController fluentText = go.GetComponent<FluentTextController>();
                 fluentText.InitPanel(empty.transform, Vector3.zero);
                 fluentText.ChangeWord("0");
-                fluentText.ShowPanel();
+                //fluentText.ShowPanel();
                 fluentText.transform.localPosition = new Vector3(pos.x, 5, pos.z);
                 partyTipTexts.Add(fluentText);
             }

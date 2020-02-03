@@ -7,13 +7,11 @@ using UnityEngine.UI;
 public class FluentTextController : MonoBehaviour
 {
     public FluentTextPanel TargetPanel;
-    public Text Text;
     public string CurrentText { get { return TargetPanel.CurrentText; } }
 
     // Start is called before the first frame update
     void Start()
     {
-        Text = TargetPanel.TargetText;
     }
 
     // Update is called once per frame
@@ -26,7 +24,7 @@ public class FluentTextController : MonoBehaviour
     public void InitPanel(Transform parent, Vector3 offset)
     {
         transform.position = parent.transform.position + offset;
-        transform.parent = parent;
+        transform.SetParent(parent);
     }
 
     public void ShowPanel()

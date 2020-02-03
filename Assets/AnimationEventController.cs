@@ -8,18 +8,17 @@ public class AnimationEventController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void SpawnEffect(GameObject effect)
     {
         Instantiate(effect,BoomPoint.position,Quaternion.identity);
+        GameObject.FindObjectOfType<PlayerAttack>().EnableDamageBox();
     }
 
 }

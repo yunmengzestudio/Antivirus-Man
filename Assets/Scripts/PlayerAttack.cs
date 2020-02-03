@@ -12,8 +12,10 @@ public class PlayerAttack : MonoBehaviour
     public GameObject DamageCollider;
     public FluentTextController FluentText;
     public AudioSource Audio;
+    public float attackDuration = 0.2f;
+    public bool HasWeapon;
+    public GameObject Weapon;
 
-    private float attackDuration;
     private float timer = 0f;
     private ResLoader resLoader;
 
@@ -26,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
         // FluentText 初始化
         FluentText.InitPanel(transform, FluentText.transform.position - transform.position);
         FluentText.ShowPanel();
+        FluentText.ChangeWord(FluentText.CurrentText);
 
         // 注册驱逐通知
         TypeEventSystem.Register<MissionExpelledNotification>(OnExpelOne);
@@ -34,15 +37,15 @@ public class PlayerAttack : MonoBehaviour
         resLoader = ResLoader.Allocate();
 
         // 获取攻击动画时长
-        if (Animator) {
-            AnimationClip[] clips = Animator.runtimeAnimatorController.animationClips;
-            foreach (AnimationClip clip in clips) {
-                if (clip.name == "Attack") {
-                    attackDuration = clip.length;
-                    break;
-                }
-            }
-        }
+        //if (Animator) {
+        //    AnimationClip[] clips = Animator.runtimeAnimatorController.animationClips;
+        //    foreach (AnimationClip clip in clips) {
+        //        if (clip.name == "Attack") {
+        //            attackDuration = clip.length;
+        //            break;
+        //        }
+        //    }
+        //}
     }
 
     private void OnDestroy() {
@@ -50,26 +53,34 @@ public class PlayerAttack : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetKeyDown(AttackKeyCode)) {
+        if (Input.GetKeyDown(AttackKeyCode)&&HasWeapon) {
             Attack();
         }
+
+        Weapon.SetActive(HasWeapon);
         
         if (timer > 0) {
             timer -= Time.deltaTime;
         }
-        else if (timer < 0) {
+        else if (timer <= 0) {
             timer = 0;
             // 关闭碰撞器
-            DamageCollider.tag = "Player";
+            DamageCollider.tag = "Untagged";
         }
     }
 
-    private void Attack() {
+    public void Attack() {
         Animator.SetTrigger("Attack");
+    }
+
+    public void EnableDamageBox()
+    {
         // Attack 事件处理
         timer = attackDuration;
+
         // 开启碰撞器
         DamageCollider.tag = "Damage";
+
     }
 
     // 成功驱逐村民的处理
