@@ -19,6 +19,8 @@ public class Human : MonoBehaviour
     private Vector3 missionPos;
     private bool dead = false;
 
+    private NavMeshObstacle Obstacle;
+
 
     private void Update() {
         animator.SetFloat("Speed", Agent.velocity.magnitude / SpeedRatio);
@@ -46,6 +48,8 @@ public class Human : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         BornPos = transform.position;   // 记录出生点位置（HOME）
         FluentText.InitPanel(transform, FluentText.transform.position - transform.position);
+        Obstacle = GetComponent<NavMeshObstacle>();
+        SwitchAgentObstacle(true);
 
         // 开始执行任务
         mission = StartCoroutine(GO());
@@ -59,12 +63,17 @@ public class Human : MonoBehaviour
 
         // Get target position and Move to target pos
         missionPos = App.Container.Resolve<LevelManager>().GetTargetPos(humanEvent.EventType);
-        Agent.SetDestination(missionPos);
+        
+        SwitchAgentObstacle(true);
+        Agent.SetDestination(RandomNearPos(missionPos, Agent.stoppingDistance / 2));
 
         while (!ArriveTarget()) {
             yield return null;  // 等待到下一帧
         }
-        
+        transform.LookAt(missionPos);
+
+        SwitchAgentObstacle(false);
+
         // 到达指定地点后进行结算
         if (humanEvent.IsParty) {
             // 播放动画
@@ -83,10 +92,14 @@ public class Human : MonoBehaviour
     
 
     private IEnumerator GOHome() {
+        // 恢复 animator 到初始状态
+        animator.Play("Idle");
+
         // 被抓之后说的话
         string words = humanEvent.WordsAfterCaught[Random.Range(0, humanEvent.WordsAfterCaught.Length)];
         FluentText.ChangeWord(words);
 
+        SwitchAgentObstacle(true);
         Agent.SetDestination(BornPos);
         while (!ArriveTarget()) {
             yield return null;
@@ -116,5 +129,15 @@ public class Human : MonoBehaviour
     private bool ArriveTarget() {
         return (Agent.destination - Agent.nextPosition).magnitude
             <= Agent.stoppingDistance + 0.05f;
+    }
+
+    private void SwitchAgentObstacle(bool enableAgent) {
+        Agent.enabled = enableAgent;
+        Obstacle.enabled = !enableAgent;
+    }
+
+    private Vector3 RandomNearPos(Vector3 pos, float radius) {
+        Vector2 p = Random.insideUnitCircle.normalized * radius;
+        return new Vector3(pos.x + p.x, 0, pos.z + p.y);
     }
 }
