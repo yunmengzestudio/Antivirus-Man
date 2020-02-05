@@ -45,10 +45,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 2
+  m_Acceleration: 90
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 180
   m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FluentText: {fileID: 8765092953608632782}
   Agent: {fileID: 2789144295294212343}
-  SpeedRatio: 1
+  SpeedRatio: 2
 --- !u!136 &1619336245843324245
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -223,6 +223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018517492502452483, guid: 1a6e61107bb1bd243b156dea1d99439e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.15294118
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a6e61107bb1bd243b156dea1d99439e, type: 3}

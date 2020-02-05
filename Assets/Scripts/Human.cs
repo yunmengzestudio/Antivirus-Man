@@ -70,19 +70,25 @@ public class Human : MonoBehaviour
         while (!ArriveTarget()) {
             yield return null;  // 等待到下一帧
         }
-        transform.LookAt(missionPos);
+
 
         SwitchAgentObstacle(false);
 
         // 到达指定地点后进行结算
         if (humanEvent.IsParty) {
+            var lookDir = missionPos - transform.position;
+            lookDir.Set(lookDir.x, 0, lookDir.z);
+            Quaternion q = Quaternion.LookRotation(lookDir);
+            transform.rotation = q;
             // 播放动画
             string anim = humanEvent.PartyAnimations[
                 Random.Range(0, humanEvent.PartyAnimations.Length)];
-            animator.Play(anim);
+            animator.PlayInFixedTime(anim,-1,1f);
 
             // 告诉 Manager 自己到达某处聚集点
             TypeEventSystem.Send(new PartyNotification(missionPos, transform));
+            yield return new WaitForSeconds(2);
+            FluentText.HidePanel();
         }
         else {
             ReportMission(done: true);
@@ -101,6 +107,8 @@ public class Human : MonoBehaviour
 
         SwitchAgentObstacle(true);
         Agent.SetDestination(BornPos);
+        Agent.speed = 3.5f;
+        SpeedRatio = 1;
         while (!ArriveTarget()) {
             yield return null;
         }

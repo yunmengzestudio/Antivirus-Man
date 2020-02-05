@@ -74,7 +74,7 @@ public class HumanFactory : MonoBehaviour
         go.transform.position = bornPos;
         // 人物模型加载
         GameObject model = resLoader.LoadSync<GameObject>(prefab).Instantiate();
-        model.transform.parent = go.transform;
+        model.transform.SetParent(go.transform);
         model.transform.localPosition = Vector3.zero;
 
         // 初始化 Human
