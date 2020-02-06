@@ -1,0 +1,170 @@
+ManifestFileVersion: 0
+CRC: 104404521
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: uihomepanel_prefab
+      Dependencies: {}
+    Info_1:
+      Name: simplecitizens_tourist_brown_prefab
+      Dependencies: {}
+    Info_2:
+      Name: simplecitizens_shopkeeper_white_prefab
+      Dependencies: {}
+    Info_3:
+      Name: simplecitizens_tourist_white_prefab
+      Dependencies: {}
+    Info_4:
+      Name: fluenttextcanvas_prefab
+      Dependencies: {}
+    Info_5:
+      Name: human_prefab
+      Dependencies:
+        Dependency_0: fluenttextcanvas_prefab
+    Info_6:
+      Name: simplecitizens_biker_black_prefab
+      Dependencies: {}
+    Info_7:
+      Name: simplecitizens_biker_brown_prefab
+      Dependencies: {}
+    Info_8:
+      Name: simplecitizens_grandma_black_prefab
+      Dependencies: {}
+    Info_9:
+      Name: simplecitizens_biker_white_prefab
+      Dependencies: {}
+    Info_10:
+      Name: simplecitizens_cheerleader_black_prefab
+      Dependencies: {}
+    Info_11:
+      Name: simplecitizens_cheerleader_brown_prefab
+      Dependencies: {}
+    Info_12:
+      Name: simplecitizens_cheerleader_white_prefab
+      Dependencies: {}
+    Info_13:
+      Name: simplecitizens_clown_black_prefab
+      Dependencies: {}
+    Info_14:
+      Name: simplecitizens_clown_brown_prefab
+      Dependencies: {}
+    Info_15:
+      Name: simplecitizens_clown_white_prefab
+      Dependencies: {}
+    Info_16:
+      Name: simplecitizens_emo_black_prefab
+      Dependencies: {}
+    Info_17:
+      Name: simplecitizens_emo_brown_prefab
+      Dependencies: {}
+    Info_18:
+      Name: simplecitizens_emo_white_prefab
+      Dependencies: {}
+    Info_19:
+      Name: simplecitizens_footballer_black_prefab
+      Dependencies: {}
+    Info_20:
+      Name: simplecitizens_footballer_brown_prefab
+      Dependencies: {}
+    Info_21:
+      Name: simplecitizens_footballer_white_prefab
+      Dependencies: {}
+    Info_22:
+      Name: simplecitizens_grandma_brown_prefab
+      Dependencies: {}
+    Info_23:
+      Name: simplecitizens_grandma_white_prefab
+      Dependencies: {}
+    Info_24:
+      Name: simplecitizens_grandpa_black_prefab
+      Dependencies: {}
+    Info_25:
+      Name: simplecitizens_grandpa_brown_prefab
+      Dependencies: {}
+    Info_26:
+      Name: simplecitizens_grandpa_white_prefab
+      Dependencies: {}
+    Info_27:
+      Name: simplecitizens_hippie_black_prefab
+      Dependencies: {}
+    Info_28:
+      Name: simplecitizens_hippie_brown_prefab
+      Dependencies: {}
+    Info_29:
+      Name: simplecitizens_hippie_white_prefab
+      Dependencies: {}
+    Info_30:
+      Name: simplecitizens_luchador_black_prefab
+      Dependencies: {}
+    Info_31:
+      Name: simplecitizens_luchador_brown_prefab
+      Dependencies: {}
+    Info_32:
+      Name: simplecitizens_luchador_white_prefab
+      Dependencies: {}
+    Info_33:
+      Name: simplecitizens_mountie_black_prefab
+      Dependencies: {}
+    Info_34:
+      Name: simplecitizens_mountie_brown_prefab
+      Dependencies: {}
+    Info_35:
+      Name: simplecitizens_mountie_white_prefab
+      Dependencies: {}
+    Info_36:
+      Name: simplecitizens_nerd_black_prefab
+      Dependencies: {}
+    Info_37:
+      Name: simplecitizens_nerd_brown_prefab
+      Dependencies: {}
+    Info_38:
+      Name: simplecitizens_nerd_white_prefab
+      Dependencies: {}
+    Info_39:
+      Name: simplecitizens_prisoner_black_prefab
+      Dependencies: {}
+    Info_40:
+      Name: simplecitizens_prisoner_brown_prefab
+      Dependencies: {}
+    Info_41:
+      Name: simplecitizens_prisoner_white_prefab
+      Dependencies: {}
+    Info_42:
+      Name: simplecitizens_racer_black_prefab
+      Dependencies: {}
+    Info_43:
+      Name: simplecitizens_racer_brown_prefab
+      Dependencies: {}
+    Info_44:
+      Name: simplecitizens_racer_white_prefab
+      Dependencies: {}
+    Info_45:
+      Name: simplecitizens_runner_black_prefab
+      Dependencies: {}
+    Info_46:
+      Name: simplecitizens_runner_brown_prefab
+      Dependencies: {}
+    Info_47:
+      Name: simplecitizens_runner_white_prefab
+      Dependencies: {}
+    Info_48:
+      Name: simplecitizens_shopkeeper_black_prefab
+      Dependencies: {}
+    Info_49:
+      Name: simplecitizens_shopkeeper_brown_prefab
+      Dependencies: {}
+    Info_50:
+      Name: simplecitizens_tourist_black_prefab
+      Dependencies: {}
+    Info_51:
+      Name: geli_wav
+      Dependencies: {}
+    Info_52:
+      Name: guangbo_mp3
+      Dependencies: {}
+    Info_53:
+      Name: rap_mp3
+      Dependencies: {}
+    Info_54:
+      Name: intense_ogg
+      Dependencies: {}

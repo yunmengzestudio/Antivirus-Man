@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -36,6 +37,11 @@ public class LevelManager : MonoBehaviour
         InitPartyPos2Human();
         InitPartyTipTexts();
         InitRecordList();
+    }
+
+    private void Start()
+    {
+        SceneManager.LoadScene("Env",LoadSceneMode.Additive);
     }
 
     private void OnDestroy() {

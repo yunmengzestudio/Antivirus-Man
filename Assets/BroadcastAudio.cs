@@ -5,13 +5,13 @@ using QFramework;
 
 public class BroadcastAudio : MonoBehaviour
 {
-    private AudioSource audio;
+    private AudioSource broadcastAudio;
     [Inject]
     public LevelManager MLevelManager { get; set; }
     // Start is called before the first frame update
     void Awake()
     {
-        audio = GetComponent<AudioSource>();
+        broadcastAudio = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -21,8 +21,8 @@ public class BroadcastAudio : MonoBehaviour
 
     public void PlayAudio(AudioClip clip)
     {
-        audio.clip = clip;
-        audio.Play();
+        broadcastAudio.clip = clip;
+        broadcastAudio.Play();
         MLevelManager.GetComponent<HumanFactory>().enabled = true;
     }
 

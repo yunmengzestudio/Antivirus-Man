@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 3401385372
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: cbbd250b5ebb6b53ed2ccc95cebcb1f8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 48923133f01c3d2968db572df85c56f1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0d51f3a7c41ab0346b49ae50d456bece, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/SimpleCitizens/Prefabs/SimpleCitizens_Cheerleader_Black.prefab
+Dependencies: []

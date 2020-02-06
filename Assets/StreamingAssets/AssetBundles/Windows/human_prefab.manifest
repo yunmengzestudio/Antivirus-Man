@@ -1,0 +1,63 @@
+ManifestFileVersion: 0
+CRC: 618610087
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 36c3066fa1a82d7e8d1ca9792dbd4f5a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8bd747773a20e7b6f5c7485f71d5d19a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f191bf92fbd040d418d967fdf4688389, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6d0a66a7136968f4c911ce9518e26768, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 91cf196a98688044c8012894c8a35077, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 40251d8c72e79f848a6fd5c21c079712, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3f1de4ae0e15c5b4e94782a850dc4c99, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 195
+  Script: {instanceID: 0}
+- Class: 208
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 225
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/Human.prefab
+Dependencies:
+- D:/unityProjects/Antivirus-Man/AssetBundles/Windows/fluenttextcanvas_prefab

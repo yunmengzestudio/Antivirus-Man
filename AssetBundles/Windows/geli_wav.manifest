@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 1481754856
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3da73dc3217eabc57113829d5127d969
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Art/Audios/geli.wav
+Dependencies: []
