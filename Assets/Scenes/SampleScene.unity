@@ -765,7 +765,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: HumanEvents.Array.data[8].WordsAfterCaught.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -775,7 +775,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: HumanEvents.Array.data[6].WordsAfterCaught.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -785,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: HumanEvents.Array.data[4].WordsAfterCaught.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -870,7 +870,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: SpeedConfs.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -1210,7 +1210,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: HumanEvents.Array.data[9].TipTexts.Array.data[1]
-      value: "everybody\u8DDF\u6211\u4E00\u8D77hai hai hai"
+      value: "\u4E0D\u805A\u5806\u4E0D\u8FC7\u5E74"
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -1255,12 +1255,12 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: HumanEvents.Array.data[0].TipTexts.Array.data[2]
-      value: "\u636E\u8BF4\u559D\u9152\u53EF\u4EE5\u62B5\u6297\u51A0\u72B6\u75C5\u6BD2"
+      value: "\u636E\u8BF4\u559D\u9152\u53EF\u4EE5\u589E\u5F3A\u62B5\u6297\u529B"
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: HumanEvents.Array.data[0].TipTexts.Array.data[1]
-      value: "\u9152\uFF01\uFF01\uFF01\u6211\u8981\u9152\uFF01\uFF01\uFF01"
+      value: "\u5E72\u676F\uFF01\u5E72\u676F\uFF01"
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -1295,7 +1295,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: HumanEvents.Array.data[8].WordsAfterCaught.Array.data[0]
-      value: "\u6015\u4E86\u6015\u4E86\uFF01"
+      value: "\u4E0D\u5982\u5F85\u5728\u5BB6\u91CC\u73A9\\n\u201D\u5065\u8EAB\u73AF\u5927\u5192\u9669\u201C"
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -1355,7 +1355,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: HumanEvents.Array.data[1].TipTexts.Array.data[1]
-      value: "\u6211\u9646\u7B28\u59D4\u752820w\u8D62\u5230500w\u4E0D\u662F\u95EE\u9898"
+      value: "\u6211\u9646\u7B28\u59D4\u7528\\n20w\u8D62\u5230500w\\n\u4E0D\u662F\u95EE\u9898"
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -1725,7 +1725,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -1735,7 +1735,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: SpeedConfs.Array.data[0].Speed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -1745,7 +1745,7 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: SpeedConfs.Array.data[1].Speed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
@@ -1755,7 +1755,37 @@ PrefabInstance:
     - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
         type: 3}
       propertyPath: SpeedConfs.Array.data[2].Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: SpeedConfs.Array.data[3].Interval
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: SpeedConfs.Array.data[3].Speed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: HumanEvents.Array.data[4].WordsAfterCaught.Array.data[1]
+      value: "\u52A8\u6F2B\u4E0D\u597D\u770B\u5417\uFF0C\u4E3A\u4EC0\u4E48\u8981\u51FA\u95E8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: HumanEvents.Array.data[4].WordsAfterCaught.Array.data[2]
+      value: "\u6E38\u620F\u4E0D\u597D\u73A9\u5417\uFF0C\u4E3A\u4EC0\u4E48\u8981\u51FA\u95E8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: HumanEvents.Array.data[6].WordsAfterCaught.Array.data[1]
+      value: "\u80B2\u78A7just dance\u4E0D\u9999\u5417"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529980428240750594, guid: dc7f38c711cab8545b21806ec1b26559,
+        type: 3}
+      propertyPath: HumanEvents.Array.data[8].WordsAfterCaught.Array.data[1]
+      value: "\u6015\u4E86\u6015\u4E86\uFF01"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc7f38c711cab8545b21806ec1b26559, type: 3}
@@ -1774,7 +1804,7 @@ GameObject:
   - component: {fileID: 134071749}
   - component: {fileID: 134071748}
   - component: {fileID: 134071750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1852,8 +1882,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134071743}
-  m_LocalRotation: {x: 0, y: 0.646952, z: 0, w: 0.9267263}
-  m_LocalPosition: {x: 36.762753, y: 0, z: 41.369553}
+  m_LocalRotation: {x: 0.3757372, y: 0.000000010862945, z: -0.0000000044043342, w: 0.9267263}
+  m_LocalPosition: {x: 0, y: 16.4, z: -16.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1891,7 +1921,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 134071747}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   stopNaNPropagation: 1
   antialiasingMode: 0
   temporalAntialiasing:
@@ -1929,7 +1959,7 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
+  m_ShowToolkit: 1
   m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
@@ -2451,9 +2481,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
-  m_AmplitudeGain: 0.5
-  m_FrequencyGain: 0.5
-  mNoiseOffsets: {x: 1.6867065, y: 443.56247, z: 841.057}
+  m_AmplitudeGain: 0.3
+  m_FrequencyGain: 0.3
+  mNoiseOffsets: {x: -909.55896, y: -297.17313, z: -449.66113}
 --- !u!1 &335293250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,7 +2508,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335293250}
-  m_LocalRotation: {x: 0.37573722, y: 0.000000029678109, z: -0.000000012032863, w: 0.9267263}
+  m_LocalRotation: {x: 0.37573722, y: -0.000000029678109, z: 0.000000012032863, w: 0.9267263}
   m_LocalPosition: {x: 0, y: 16.4, z: -16.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
